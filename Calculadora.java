@@ -1,26 +1,26 @@
-    public class Calculadora {
-
-    /**
-     * Executa uma operação matemática básica.
-     * @param operacao Tipo da operação: "subtracao", "multiplicacao"
-     * @param a Primeiro número
-     * @param b Segundo número
-     * @return Resultado da operação
-     */
-    public double calcular(String operacao, int a, int b) {
-        switch (operacao.toLowerCase()) {
-            case "subtracao":
-                return a - b;
-            case "multiplicacao":
-                return a * b;
-        }
+public class Calculadora {
+    public static double somar(double a, double b) {
+        return a + b;
     }
 
-    // Método principal para testar
+    public static double subtrair(double a, double b) {
+        return a - b;
+    }
+
+    public static double multiplicar(double a, double b) {
+        return a * b;
+    }
+
+    public static double dividir(double a, double b) {
+        if (b == 0) throw new ArithmeticException("Divisao por zero!");
+        return a / b;
+    }
+
+    // Metodo principal de execucao da calculadora
     public static void main(String[] args) {
-        Calculadora calc = new Calculadora();
-        System.out.println("Subtração: " + calc.calcular("subtracao", 10, 5));
-        System.out.println("Multiplicação: " + calc.calcular("multiplicacao", 10, 5));
+        System.out.println("Soma: " + somar(2, 3));
+        System.out.println("Subtracao: " + subtrair(5, 2));
+        System.out.println("Multiplicacao: " + multiplicar(3, 4));
+        System.out.println("Divisao: " + dividir(10, 2));
     }
 }
-
